@@ -49,3 +49,18 @@ rails new <app_name>
 ```bash
 rails s
 ```
+
+### generate migration files
+
+```bash
+# command will generate timestamped filename: <timestamp>_<name>.rb
+rails generate migration <name>
+
+# edit file with proper attributes then when readytable output
+# NOTE: after file is migrated is locked, and direct changes to it won't generate new table output
+rails db:migrate
+
+# Following command reverts lock on migration file, removing table content.
+# This is now a preferred way as is brittle. Better to create new file each change.
+rails db:rollback
+```
