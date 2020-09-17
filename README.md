@@ -36,6 +36,12 @@ Most code is a lose variation or exact copy of Udemy course made by Rob Percival
 
 ## tools
 
+`rails` -- rails cli
+
+`rails c / rails console` rails dev console to interact with DB
+
+`byebug` - debugger (byebug)
+
 ## miscellaneous
 
 ### app template
@@ -48,6 +54,12 @@ rails new <app_name>
 
 ```bash
 rails s
+```
+
+### generate controller
+
+```bash
+rails generate controller <name>
 ```
 
 ### generate migration files
