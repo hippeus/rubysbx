@@ -28,6 +28,8 @@ Most code is a lose variation or exact copy of Udemy course made by Rob Percival
 
 ## content
 
+`alpha_blog` - articles blog _(pagination, authentication)_
+
 ### Ruby centric
 
 ### Rails centric
@@ -35,3 +37,7 @@ Most code is a lose variation or exact copy of Udemy course made by Rob Percival
 ## tools
 
 ## miscellaneous
+
+```bash
+rails new <app_name>
+```
