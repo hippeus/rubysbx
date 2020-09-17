@@ -38,6 +38,14 @@ Most code is a lose variation or exact copy of Udemy course made by Rob Percival
 
 ## miscellaneous
 
+### app template
+
 ```bash
 rails new <app_name>
+```
+
+### run app locally
+
+```bash
+rails s
 ```
