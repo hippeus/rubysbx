@@ -9,14 +9,20 @@ class ArticlesController < ApplicationController
   end
 
   def new
-
+    @article = Article.new
   end
 
   def create
     # .required(:symbol).permit(:attr...) <-- whitelisting params
     @article = Article.new(params.require(:article).permit(:title, :description))
-    @article.save
-    # line below is a shorthand for -> redirect_to article_path(@article)
-    redirect_to @article
+    if @article.save
+      # built-in flash message
+      flash[:notice] = "Article was created successfully"
+      # redirect_to article_path(@article)
+      redirect_to @article
+    else
+      # render new view
+      render 'new'
+    end
   end
 end
