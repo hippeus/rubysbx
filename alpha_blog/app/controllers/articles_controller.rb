@@ -1,10 +1,14 @@
 class ArticlesController < ApplicationController
-  def show
-    # byebug <- uncommenting this line will trigger debugger to break here
-    @article = Article.find(params[:id])
-  end
+  # before_action is a special purpose hook which runs before any other specified method.
+  # also
+  # %i[ ] # Non-interpolated Array of symbols, separated by whitespace
+  # %I[ ] # Interpolated Array of symbols, separated by whitespace
+  before_action :set_article, only: %i[show edit update destroy]
+
+  def show; end
 
   def index
+    # byebug <- uncommenting this line will trigger debugger to break here
     @articles = Article.all
   end
 
@@ -14,7 +18,7 @@ class ArticlesController < ApplicationController
 
   def create
     # .required(:symbol).permit(:attr...) <-- whitelisting params
-    @article = Article.new(params.require(:article).permit(:title, :description))
+    @article = Article.new(article_params)
     if @article.save
       # built-in flash message
       flash[:notice] = 'Article was created successfully'
@@ -26,13 +30,10 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def edit
-    @article = Article.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @article = Article.find(params[:id])
-    if @article.update(params.require(:article).permit(:title, :description))
+    if @article.update(article_params)
       flash[:notice] = 'Article was updates successfully.'
       redirect_to @article
     else
@@ -43,8 +44,17 @@ class ArticlesController < ApplicationController
   def delete; end
 
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
     redirect_to articles_path
+  end
+
+  def article_params
+    params.require(:article).permit(:title, :description)
+  end
+
+  private
+
+  def set_article
+    @article = Article.find(params[:id])
   end
 end
