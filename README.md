@@ -28,7 +28,7 @@ Most code is a lose variation or exact copy of Udemy course made by Rob Percival
 
 ## content
 
-`alpha_blog` - articles blog _(pagination, authentication)_
+`alpha_blog` - articles blog _(pagination, authentication, static files, flash messages, param whitelisting)_
 
 ### Ruby centric
 
