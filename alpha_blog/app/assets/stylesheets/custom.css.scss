@@ -2,5 +2,53 @@
 @import "bootstrap/dist/css/bootstrap";
 
 .navbar {
-  background-color: antiquewhite !important;
+  background-color: black !important;
 }
+
+.nav-link {
+  color: white !important;
+}
+
+#brand_logo {
+  color: white !important;
+  float: left;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#brand_logo:hover {
+  color: green;
+  text-decoration: none;
+}
+
+#home_container {
+  margin-top: 25px;
+  color: whitesmoke;
+}
+
+.jumbotron {
+  /* adding custom image with build-in asset-url which has a root path bind to app/assets/images ?*/
+  background-image: asset-url("home_jumbotron_background.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+}
+
+/* sticky footer classes */
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: gray;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+/* sticky footer classes end*/
