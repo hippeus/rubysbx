@@ -44,6 +44,12 @@ Most code is a lose variation or exact copy of Udemy course made by Rob Percival
 
 ## miscellaneous
 
+### bootstrap dependency
+
+```bash
+yarn add bootstrap@4.5 jquery popper.js
+```
+
 ### app template
 
 ```bash
